@@ -1,11 +1,7 @@
 const routes = require("express").Router();
+const userRoutes = require('./userRoutes');
 
-routes.use('/', (req, res) => {
-    try {
-        res.send({message: "Bem vindo"})
-    } catch (error) {
-        res.status(500).send({error: error})
-    }
-})
+routes.use('/user', userRoutes);
+
 
 module.exports = routes;
